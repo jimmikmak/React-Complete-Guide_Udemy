@@ -1,8 +1,7 @@
 import { Fragment } from "react";
-import { useParams, Routes, Route } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 import HighlightedQuote from "../components/quotes/HighlightedQuote";
-import Comments from "../components/comments/Comments";
 
 const DUMMY_QUOTES = [
   { id: "q1", author: "James", text: "React is very versatile!" },
@@ -21,11 +20,6 @@ const QuoteDetail = () => {
   return (
     <Fragment>
       <HighlightedQuote text={quote.text} author={quote.author} />
-      <Routes>
-        <Route path={`/quotes/${params.quoteId}/comments`}>
-          <Comments />
-        </Route>
-      </Routes>
     </Fragment>
   );
 };
